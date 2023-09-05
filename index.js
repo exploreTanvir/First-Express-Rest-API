@@ -1,4 +1,15 @@
 const app=require("./app")
-app.listen(6000,()=>{
-    console.log("Success");
+
+//environmen variable
+const dotenv=require("dotenv")
+dotenv.config({path:"./config.env"})
+
+// Without environment variable
+app.listen(process.env.RUNNING_PORT,()=>{
+    console.log("This is from environment variable  "+process.env.RUNNING_PORT);
 })
+
+// With environment variable
+// app.listen(1120,()=>{
+//     console.log("Success");
+// })
